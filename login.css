@@ -1,6 +1,7 @@
 *{
     margin: 0%;
     padding: 0%;
+    box-sizing: border-box;
 }
 html,body{
     height: 100%;
@@ -8,43 +9,48 @@ html,body{
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgb(196, 224, 245);
+    background-color: #f1f3f6;
+    font-family: Roboto, Arial, sans-serif;
 }
 #main{
     height: 90%;
-    width: 65%;
+    max-height: 600px;
+    width: 900px;
     display: flex;
+    box-shadow: 0 4px 12px rgba(0,0,0,.1);
+    border-radius: 4px;
+    overflow: hidden;
 }
 #box1{
     height: 100%;
     width: 40%;
-    background-color: rgb(16, 97, 197);
-
+    background: linear-gradient(to bottom right, #2874f0, #0056b3);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 40px 30px;
 }
 #para{
-    height: 40%;
-    width: 100%;
-    margin: 35px;
     color: white;
 }
 
 #logo img{
-    height: 80%;
-    width: 80%;
+    width: 100%;
+    max-width: 180px;
+    height: auto;
 }
 #para h3{
-    margin-bottom: 30px;
-    font-size:xx-large;
+    margin-bottom: 20px;
+    font-size: 28px;
+    font-weight: 500;
 }
 #para p{
-    font-size: larger;    
-    margin-right: 50px;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 16px;    
+    line-height: 1.5;
+    opacity: 0.9;
 }
 
 #logo {
-    height: 40%;
-    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -53,60 +59,101 @@ html,body{
     height: 100%;
     width: 60%;
     background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 #input{
-    height: 48px;
-    width: 92%;
-    margin-left: 20px;
-    margin-top:50px;
-    display: flex;
-    align-items: center;
+    width: 85%;
+    margin: 0 auto 20px;
 }
 #input input{
+    width: 100%;
     height: 45px;
-    width: 100%;margin: 2px;
-    border:transparent;
-    font-size: large;
+    border: none;
+    border-bottom: 1px solid #e0e0e0;
+    font-size: 15px;
     outline: none;
-    background-color: rgb(219, 235, 249);
-    border-radius: 5px;
+    padding: 0 5px;
+    transition: border-color 0.3s ease;
+}
+#input input:focus{
+    border-bottom-color: #2874f0;
 }
 #box2 p{
-    margin-top: 40px;
-    margin-left: 24px;
-    font-size: small;
-    color: rgb(60, 60, 60);
+    margin: 20px 20px 30px;
+    font-size: 13px;
+    color: #878787;
+    line-height: 1.5;
+}
+#box2 p u{
+    color: #2874f0;
+    text-decoration: none;
+    cursor: pointer;
 }
 #button{
-    margin: 20px;
-    background-color: orangered;
+    width: 85%;
+    margin: 0 auto;
+    background: linear-gradient(to right, #fb641b, #ff7c40);
     display: flex;
     text-align: center;
     justify-content: center;
-    padding: 15px;
+    padding: 14px;
     color: white;
-    cursor:pointer;
+    cursor: pointer;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,.2);
+    transition: all 0.3s ease;
+}
+#button:hover{
+    background: linear-gradient(to right, #e55a17, #ff6a2d);
+    box-shadow: 0 3px 6px rgba(0,0,0,.25);
 }
 #button input{
     background-color: transparent;
-    border: transparent;
-    font-size: larger;
+    border: none;
+    font-size: 15px;
+    font-weight: 500;
     color: white;
     height: 100%;
     width: 100%;
     cursor: pointer;
 }
-#button:hover{
-    background-color: rgb(175, 48, 2);
-}
 #footer{
-    color:blue;
+    color: #2874f0;
     text-align: center;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode';
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: 30px;
     cursor: pointer;
 }
-
+#footer a{
+    color: #2874f0;
+    text-decoration: none;
+}
 #footer:hover{
-    color: black;
+    color: #1e5bc7;
 }
 
+/* Responsive Design */
+@media (max-width: 768px) {
+    #main{
+        width: 95%;
+        flex-direction: column;
+    }
+    #box1{
+        width: 100%;
+        height: 30%;
+        padding: 20px;
+    }
+    #box2{
+        width: 100%;
+        height: 70%;
+    }
+    #para h3{
+        font-size: 22px;
+    }
+    #para p{
+        font-size: 14px;
+    }
+}
